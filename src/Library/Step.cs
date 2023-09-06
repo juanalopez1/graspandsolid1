@@ -4,6 +4,9 @@
 // </copyright>
 //-------------------------------------------------------------------------------
 
+using System;
+using System.Runtime.CompilerServices;
+
 namespace Full_GRASP_And_SOLID.Library
 {
     public class Step
@@ -23,5 +26,16 @@ namespace Full_GRASP_And_SOLID.Library
         public int Time { get; set; }
 
         public Equipment Equipment { get; set; }
+
+        /* le di la responsabilidad de calcular el subtotal a step ya que es quien tiene la informacion
+        para calcular el subtotal de cada renglon de la receta (principio expert) */
+        public static double subTotal(Product input, Equipment equipment, int time)
+        {
+            double ProductPrice = input.UnitCost;
+            double subEquipment = equipment.HourlyCost * (time/60);
+            double subStepTotal = subEquipment + ProductPrice;
+            return subStepTotal;
+        }
     }
+
 }

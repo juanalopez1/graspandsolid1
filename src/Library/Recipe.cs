@@ -33,6 +33,21 @@ namespace Full_GRASP_And_SOLID.Library
                 Console.WriteLine($"{step.Quantity} de '{step.Input.Description}' " +
                     $"usando '{step.Equipment.Description}' durante {step.Time}");
             }
+            double finalCost= this.Total();
+            Console.WriteLine($"Costo total: {finalCost}");
         }
+
+        /* cree el metodo total para calcular el total de los subtotales de todos los renglones, tambien por expert
+        ya que Recipe es la clase que conoce todos los renglones */
+        public double Total()
+        {
+            double total = 0;
+            foreach (Step step in this.steps)
+            {
+                double subTotal = Step.subTotal(step.Input,step.Equipment,step.Time);
+                total = total + subTotal;
+            } 
+            return total;
+        }  
     }
 }
