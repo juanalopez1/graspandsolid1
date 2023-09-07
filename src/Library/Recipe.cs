@@ -37,7 +37,7 @@ namespace Full_GRASP_And_SOLID.Library
             Console.WriteLine($"Costo total: {finalCost}");
         }
 
-        /* cree el metodo GetProductionCost para calcular el total de los subtotales de todos los renglones, tambien por expert
+        /* creé el metodo GetProductionCost para calcular el total de los subtotales de todos los renglones, tambien por expert
         ya que Recipe es la clase que conoce todos los renglones */
         public double GetProductionCost()
         {
