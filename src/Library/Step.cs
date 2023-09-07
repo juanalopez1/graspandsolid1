@@ -29,10 +29,10 @@ namespace Full_GRASP_And_SOLID.Library
 
         /* le di la responsabilidad de calcular el subtotal a step ya que es quien tiene la informacion
         para calcular el subtotal de cada renglon de la receta (principio expert) */
-        public static double subTotal(Product input, Equipment equipment, int time)
+        public double subTotal()
         {
-            double ProductPrice = input.UnitCost;
-            double subEquipment = equipment.HourlyCost * (time/60);
+            double ProductPrice = Input.UnitCost * Quantity;
+            double subEquipment = Equipment.HourlyCost * (Time/3600d);
             double subStepTotal = subEquipment + ProductPrice;
             return subStepTotal;
         }

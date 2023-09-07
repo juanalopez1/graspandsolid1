@@ -44,7 +44,7 @@ namespace Full_GRASP_And_SOLID.Library
             double total = 0;
             foreach (Step step in this.steps)
             {
-                double subTotal = Step.subTotal(step.Input,step.Equipment,step.Time);
+                double subTotal = step.subTotal();
                 total = total + subTotal;
             } 
             return total;
